@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X TJKT 1 - JOSJIS CLASS</title>
+    <meta name="description" content="Website resmi kelas X TJKT 1. Lihat album, foto siswa, dan akses absensi kelas.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="X TJKT 1 — Website Kelas">
+    <meta property="og:description" content="Website resmi kelas X TJKT 1">
+    <meta property="og:type" content="website">
+
+    <!-- Font: Inter + Orbitron (futuristic) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================================
+           WEBSITE KELAS X TJKT 1 — ALL-IN-ONE STYLE
+           Tema: Futuristik TJKT (cyber/tech vibe)
+           Mobile-first, modern, responsive
+           ============================================================ */
+
+        /* ---------- CSS VARIABLES ---------- */
+        :root {
+            --color-primary: #00d4ff;
+            --color-primary-dark: #0099cc;
+            --color-primary-glow: rgba(0, 212, 255, 0.3);
+            --color-accent: #7c3aed;
+            --color-accent-glow: rgba(124, 58, 237, 0.3);
+            --color-bg: #0a0e17;
+            --color-bg-alt: #0f1623;
+            --color-surface: rgba(17, 24, 39, 0.85);
+            --color-surface-border: rgba(0, 212, 255, 0.15);
+            --color-text: #e2e8f0;
+            --color-text-secondary: #94a3b8;
+            --color-text-muted: #64748b;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 30px var(--color-primary-glow);
+            --shadow-glow-accent: 0 0 25px var(--color-accent-glow);
+            --radius-sm: 10px;
+            --radius-md: 14px;
+            --radius-lg: 18px;
+            --radius-xl: 24px;
+            --max-width: 780px;
+            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-display: 'Orbitron', 'Inter', system-ui, sans-serif;
+            --transition-fast: 180ms ease;
+            --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ---------- RESET & BASE ---------- */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            background-image:
+                radial-gradient(ellipse at 20% 10%, rgba(0, 212, 255, 0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(124, 58, 237, 0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 90%, rgba(0, 212, 255, 0.03) 0%, transparent 60%);
+            color: var(--color-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Subtle grid overlay untuk kesan tech */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0, 212, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ---------- SKIP LINK (ACCESSIBILITY) ---------- */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            background: var(--color-primary);
+            color: #0a0e17;
+            padding: 10px 16px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 14px;
+            z-index: 1000;
+            transition: top var(--transition-fast);
+        }
+
+        .skip-link:focus {
+            top: 16px;
+        }
+
+        /* ---------- CONTAINER ---------- */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ---------- HEADER ---------- */
+        .header {
+            background: var(--color-surface);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 48px 0 36px;
+            text-align: center;
+            border-bottom: 1px solid var(--color-surface-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Glow line di bawah header */
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+        }
+
+        /* Logo */
+        .logo-wrapper {
+            display: inline-block;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        /* Glow ring di belakang logo */
+        .logo-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            background: conic-gradient(from 0deg, var(--color-primary), var(--color-accent), var(--color-primary)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: logoRingRotate 4s linear infinite;
+        }
+
+        @keyframes logoRingRotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        .logo {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            border-radius: 50%;
+            box-shadow: var(--shadow-glow);
+            background: var(--color-bg);
+            position: relative;
+            z-index: 1;
+            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Nama Kelas */
+        .nama-kelas {
+            font-family: var(--font-display);
+            font-size: clamp(30px, 7vw, 44px);
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #ffffff;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .nama-kelas .highlight {
+            background: linear-gradient(135deg, var(--color-primary), #60a5fa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-family: var(--font-display);
+            font-size: 13px;
+            color: var(--color-primary);
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        /* ---------- SECTION CARD (Glassmorphism) ---------- */
+        .section {
+            padding: 36px 0;
+        }
+
+        .section-card {
+            background: var(--color-surface);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--color-surface-border);
+            border-radius: var(--radius-lg);
+            padding: 28px 22px;
+            box-shadow: var(--shadow-md);
+        }
+
+        @media (min-width: 640px) {
+            .section-card {
+                padding: 32px 28px;
+            }
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(18px, 3.5vw, 22px);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .section-title .accent {
+            color: var(--color-primary);
+        }
+
+        .section-desc {
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: 13px;
+            margin-bottom: 22px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ---------- ALBUM GRID ---------- */
+        .album-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .album-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+        }
+
+        /* Album Card */
+        .album-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            cursor: pointer;
+            transition:
+                transform var(--transition-smooth),
+                box-shadow var(--transition-smooth);
+            aspect-ratio: 4 / 3;
+            background: #1a1f2e;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .album-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Overlay glow saat hover */
+        .album-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-md);
+            opacity: 0;
+            transition: opacity var(--transition-smooth);
+            box-shadow: inset 0 0 40px rgba(0, 212, 255, 0.15);
+            pointer-events: none;
+        }
+
+        .album-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.15);
+        }
+
+        .album-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .album-card:hover::after {
+            opacity: 1;
+        }
+
+        .album-card:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 3px;
+        }
+
+        /* ---------- ABSENSI SECTION ---------- */
+        .absensi-section {
+            text-align: center;
+            padding: 24px 0 36px;
+        }
+
+        .btn-absensi {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+            color: #0a0e17;
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            box-shadow: 0 4px 24px var(--color-primary-glow);
+            transition:
+                transform var(--transition-fast),
+                box-shadow var(--transition-fast);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Shine effect */
+        .btn-absensi::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn-absensi:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 35px rgba(0, 212, 255, 0.45);
+        }
+
+        .btn-absensi:hover::before {
+            left: 100%;
+        }
+
+        .btn-absensi:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 15px var(--color-primary-glow);
+        }
+
+        .btn-absensi:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 4px;
+        }
+
+        .btn-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .absensi-hint {
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--color-text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        /* ---------- FOTO SISWA GRID ---------- */
+        .foto-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        @media (max-width: 480px) {
+            .foto-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .foto-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 14px;
+            }
+        }
+
+        /* Foto Card */
+        .foto-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+            transition:
+                transform var(--transition-smooth),
+                box-shadow var(--transition-smooth);
+            aspect-ratio: 1 / 1;
+            background: #1a1f2e;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .foto-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .foto-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-md);
+            opacity: 0;
+            transition: opacity var(--transition-smooth);
+            box-shadow: inset 0 0 30px rgba(0, 212, 255, 0.12);
+            pointer-events: none;
+        }
+
+        .foto-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.12);
+        }
+
+        .foto-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .foto-card:hover::after {
+            opacity: 1;
+        }
+
+        .foto-card:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 3px;
+        }
+
+        /* Skeleton loading */
+        .skeleton {
+            background: linear-gradient(90deg, #1a1f2e 25%, #222838 50%, #1a1f2e 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.4s infinite;
+            border-radius: var(--radius-md);
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* ============================================================
+           STRUKTUR KELAS — GRID CARDS
+           ============================================================ */
+        .struktur-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        @media (min-width: 500px) {
+            .struktur-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Card khusus wali kelas — full width */
+        .struktur-card.wali {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(124, 58, 237, 0.08));
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .struktur-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            transition:
+                transform var(--transition-fast),
+                border-color var(--transition-fast),
+                box-shadow var(--transition-fast);
+        }
+
+        .struktur-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(0, 212, 255, 0.25);
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.08);
+        }
+
+        /* Avatar */
+        .struktur-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .struktur-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Warna avatar berdasarkan jabatan */
+        .avatar-wali {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+        }
+        .avatar-ketua {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+        }
+        .avatar-wakil {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        .avatar-sekertaris {
+            background: linear-gradient(135deg, #10b981, #059669);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        }
+        .avatar-bendahara {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Info */
+        .struktur-info {
+            min-width: 0;
+        }
+
+        .struktur-nama {
+            font-weight: 600;
+            font-size: 15px;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .struktur-jabatan {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .jabatan-wali { color: #fbbf24; }
+        .jabatan-ketua { color: #f87171; }
+        .jabatan-wakil { color: #60a5fa; }
+        .jabatan-sekertaris { color: #34d399; }
+        .jabatan-bendahara { color: #a78bfa; }
+
+        /* ============================================================ */
+
+        /* ---------- LIGHTBOX ---------- */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 8, 15, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition:
+                opacity var(--transition-smooth),
+                visibility var(--transition-smooth);
+            padding: 40px;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 212, 255, 0.08);
+            transform: scale(0.9);
+            transition: transform var(--transition-smooth);
+        }
+
+        .lightbox.active .lightbox-img {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            transition: background var(--transition-fast), border-color var(--transition-fast);
+            z-index: 2;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .lightbox-close:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 3px;
+        }
+
+        .lightbox-close svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ---------- FOOTER ---------- */
+        .footer {
+            margin-top: auto;
+            background: var(--color-surface);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-top: 1px solid var(--color-surface-border);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 12px;
+            color: var(--color-text-muted);
+            letter-spacing: 1px;
+        }
+
+        .footer strong {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        /* ---------- REVEAL ANIMATION ---------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition:
+                opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger delay */
+        .reveal:nth-child(1) { transition-delay: 0ms; }
+        .reveal:nth-child(2) { transition-delay: 80ms; }
+        .reveal:nth-child(3) { transition-delay: 160ms; }
+        .reveal:nth-child(4) { transition-delay: 240ms; }
+
+        /* ---------- UTILITIES ---------- */
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        /* Selection color */
+        ::selection {
+            background: rgba(0, 212, 255, 0.3);
+            color: #fff;
+        }
+
+        /* Scrollbar (webkit) */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--color-bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+
+        /* ---------- PRINT ---------- */
+        @media print {
+            body::before { display: none; }
+            .lightbox, .btn-absensi, .skip-link { display: none !important; }
+            body { background: #fff; color: #000; }
+            .section-card, .header, .footer { background: #fff; border: 1px solid #ccc; }
+            .struktur-card { border: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip link untuk aksesibilitas keyboard -->
+    <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header">
+        <div class="container">
+            <!-- Logo Kelas -->
+            <!-- GANTI: Jika nama file logo berbeda, ubah src di bawah -->
+            <div class="logo-wrapper">
+                <img
+                    src="assets/logo-kelas.png"
+                    alt="Logo Kelas X TJKT 1"
+                    class="logo"
+                    loading="eager"
+                    width="140"
+                    height="140"
+                >
+            </div>
+
+            <!-- Nama Kelas -->
+            <h1 class="nama-kelas">X <span class="highlight">TJKT</span> 1</h1>
+            <p class="subtitle">Hebat Jaya dan Josjis</p>
+        </div>
+    </header>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <main id="main-content">
+
+        <!-- SECTION: Album Kelas -->
+        <section class="section album-section reveal" id="album">
+            <div class="container">
+                <div class="section-card">
+                    <h2 class="section-title"><span class="accent">📸</span> Album Kelas</h2>
+                    <p class="section-desc">Momen kebersamaan kami</p>
+
+                    <!--
+                        GANTI: Jika foto album bertambah/berubah,
+                        tambahkan/ubah src di dalam .album-grid
+                    -->
+                    <div class="album-grid">
+                        <div class="album-card" data-src="assets/album/kelas1.jpg">
+                            <img
+                                src="assets/album/kelas1.jpg"
+                                alt="Foto Album Kelas 1"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="album-card" data-src="assets/album/kelas2.jpg">
+                            <img
+                                src="assets/album/kelas2.jpg"
+                                alt="Foto Album Kelas 2"
+                                loading="lazy"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Tombol Absensi -->
+        <section class="section absensi-section reveal" id="absensi">
+            <div class="container">
+                <!-- Tombol ini mengarah ke website absensi eksternal -->
+                <a
+                    href="https://sasca.smmkn3singaraja.sch.id"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-absensi"
+                >
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>ABSEN KELAS</span>
+                </a>
+                <p class="absensi-hint">Klik tombol di atas untuk mengisi absensi kelas</p>
+            </div>
+        </section>
+
+        <!-- SECTION: Struktur Kelas -->
+        <section class="section struktur-section reveal" id="struktur">
+            <div class="container">
+                <div class="section-card">
+                    <h2 class="section-title"><span class="accent">👥</span> Struktur Kelas</h2>
+                    <p class="section-desc">Pengurus kelas X TJKT 1</p>
+
+                    <div class="struktur-grid">
+                        <!--
+                            GANTI: Untuk mengganti foto pengurus,
+                            tambahkan <img> di dalam .struktur-avatar
+                            dan hapus teks inisial di dalamnya.
+                            Contoh: <img src="foto/wali.jpg" alt="IBU YUNI">
+                        -->
+
+                        <!-- Wali Kelas -->
+                        <div class="struktur-card wali">
+                            <div class="struktur-avatar avatar-wali">
+                                <img src="foto/yuni.jpg" alt="IBU YUNI">
+                            </div>
+                            <div class="struktur-info">
+                                <div class="struktur-nama">IBU YUNI</div>
+                                <div class="struktur-jabatan jabatan-wali">Wali Kelas</div>
+                            </div>
+                        </div>
+
+                        <!-- Ketua Kelas -->
+                        <div class="struktur-card">
+                            <div class="struktur-avatar avatar-ketua">
+                                <img src="foto/HAFIZ.jpg" alt="IBNU HAFIZ">
+                            </div>
+                            <div class="struktur-info">
+                                <div class="struktur-nama">IBNU HAFIZ</div>
+                                <div class="struktur-jabatan jabatan-ketua">Ketua Kelas</div>
+                            </div>
+                        </div>
+
+                        <!-- Wakil Ketua Kelas -->
+                        <div class="struktur-card">
+                            <div class="struktur-avatar avatar-wakil">
+                                <img src="foto/krisna.jpg" alt="KRISNA">
+                            </div>
+                            <div class="struktur-info">
+                                <div class="struktur-nama">KRISNA</div>
+                                <div class="struktur-jabatan jabatan-wakil">Wakil Ketua</div>
+                            </div>
+                        </div>
+
+                        <!-- Sekertaris -->
+                        <div class="struktur-card">
+                            <div class="struktur-avatar avatar-sekertaris">
+                                <img src="foto/tria.jpg" alt="TRIA MAHARANI">
+                            </div>
+                            <div class="struktur-info">
+                                <div class="struktur-nama">TRIA MAHARANI</div>
+                                <div class="struktur-jabatan jabatan-sekertaris">Sekertaris</div>
+                            </div>
+                        </div>
+
+                        <!-- Bendahara -->
+                        <div class="struktur-card">
+                            <div class="struktur-avatar avatar-bendahara">
+                                <img src="foto/khania.jpg" alt="KHANIA">
+                            </div>
+                            <div class="struktur-info">
+                                <div class="struktur-nama">KHANIA</div>
+                                <div class="struktur-jabatan jabatan-bendahara">Bendahara</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Foto Siswa -->
+        <section class="section foto-section reveal" id="foto-siswa">
+            <div class="container">
+                <div class="section-card">
+                    <h2 class="section-title"><span class="accent">🎓</span> Foto Siswa</h2>
+                    <p class="section-desc">Anggota kelas kami</p>
+
+                    <!-- Grid foto siswa — diisi oleh JavaScript -->
+                    <div class="foto-grid" id="fotoGrid">
+                        <!-- Placeholder skeleton loading -->
+                        <div class="skeleton" style="aspect-ratio: 1/1;"></div>
+                        <div class="skeleton" style="aspect-ratio: 1/1;"></div>
+                        <div class="skeleton" style="aspect-ratio: 1/1;"></div>
+                        <div class="skeleton" style="aspect-ratio: 1/1;"></div>
+                        <div class="skeleton" style="aspect-ratio: 1/1;"></div>
+                        <div class="skeleton" style="aspect-ratio: 1/1;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 <strong>X TJKT 1</strong> — HEBAT DAN JOSJIS</p>
+        </div>
+    </footer>
+
+    <!-- ============ LIGHTBOX MODAL ============ -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Pratinjau foto">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Tutup pratinjau">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+        </button>
+        <img src="" alt="" class="lightbox-img" id="lightboxImg">
+    </div>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script>
+        /**
+         * ============================================================
+         * WEBSITE KELAS X TJKT 1 — ALL-IN-ONE SCRIPT
+         * Lightbox, Galeri Foto, Reveal Animation
+         * ============================================================
+         */
+
+        // =============================================================
+        // KONFIGURASI: DAFTAR FOTO SISWA (25 siswa)
+        // =============================================================
+        // CARA MENAMBAH FOTO BARU:
+        // 1. Letakkan file foto di folder "fotomurid/"
+        // 2. Tambahkan nama file di array di bawah ini
+        // 3. Format: 'fotomurid/nama-file.jpg'
+        // =============================================================
+
+        const daftarFotoSiswa = [
+            'fotomurid/siswa1.jpg',
+            'fotomurid/siswa2.jpg',
+            'fotomurid/siswa3.jpg',
+            'fotomurid/siswa4.jpg',
+            'fotomurid/siswa5.jpg',
+            'fotomurid/siswa6.jpg',
+            'fotomurid/siswa7.jpg',
+            'fotomurid/siswa8.jpg',
+            'fotomurid/siswa9.jpg',
+            'fotomurid/siswa10.jpg',
+            'fotomurid/siswa11.jpg',
+            'fotomurid/siswa12.jpg',
+            'fotomurid/siswa13.jpg',
+            'fotomurid/siswa14.jpg',
+            'fotomurid/siswa15.jpg',
+            'fotomurid/siswa16.jpg',
+            'fotomurid/siswa17.jpg',
+            'fotomurid/siswa18.jpg',
+            'fotomurid/siswa19.jpg',
+            'fotomurid/siswa20.jpg',
+            'fotomurid/siswa21.jpg',
+            'fotomurid/siswa22.jpg',
+            'fotomurid/siswa23.jpg',
+            'fotomurid/siswa24.jpg',
+            'fotomurid/siswa25.jpg',
+            // 👆 TAMBAHKAN FOTO BARU DI ATAS BARIS INI
+            // Format: 'fotomurid/namafile.jpg',
+        ];
+
+        // =============================================================
+        // FUNGSI: Render Galeri Foto Siswa
+        // =============================================================
+        function renderFotoSiswa() {
+            const fotoGrid = document.getElementById('fotoGrid');
+            fotoGrid.innerHTML = '';
+
+            if (daftarFotoSiswa.length === 0) {
+                fotoGrid.innerHTML =
+                    '<p style="grid-column:1/-1;text-align:center;color:#64748b;padding:32px;font-size:14px;">Belum ada foto siswa.</p>';
+                return;
+            }
+
+            daftarFotoSiswa.forEach((src, index) => {
+                const card = document.createElement('div');
+                card.className = 'foto-card';
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('role', 'button');
+                card.setAttribute('aria-label', 'Foto siswa ' + (index + 1));
+
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = 'Foto Siswa ' + (index + 1);
+                img.loading = 'lazy';
+
+                // Error handling: jika foto tidak ditemukan
+                img.onerror = function() {
+                    this.style.display = 'none';
+                    card.style.background = '#1a1f2e';
+                    card.style.display = 'flex';
+                    card.style.alignItems = 'center';
+                    card.style.justifyContent = 'center';
+                    card.innerHTML =
+                        '<span style="color:#64748b;font-size:12px;text-align:center;padding:8px;">⚠<br>Foto tidak tersedia</span>';
+                };
+
+                card.addEventListener('click', function() {
+                    openLightbox(src, 'Foto Siswa ' + (index + 1));
+                });
+
+                card.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(src, 'Foto Siswa ' + (index + 1));
+                    }
+                });
+
+                card.appendChild(img);
+                fotoGrid.appendChild(card);
+            });
+        }
+
+        // =============================================================
+        // FUNGSI: Lightbox
+        // =============================================================
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        let lastFocusedElement = null;
+
+        function openLightbox(src, alt) {
+            lastFocusedElement = document.activeElement;
+            lightboxImg.src = src;
+            lightboxImg.alt = alt || 'Pratinjau foto';
+            lightbox.classList.add('active');
+            document.body.classList.add('no-scroll');
+            document.getElementById('lightboxClose').focus();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+
+            if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+                lastFocusedElement.focus();
+            }
+
+            setTimeout(function() {
+                if (!lightbox.classList.contains('active')) {
+                    lightboxImg.src = '';
+                }
+            }, 350);
+        }
+
+        // Event close
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+
+        // =============================================================
+        // EVENT: Album Card — Lightbox
+        // =============================================================
+        document.querySelectorAll('.album-card').forEach(function(card) {
+            var img = card.querySelector('img');
+            var src = card.getAttribute('data-src') || img.src;
+            var alt = img.alt || 'Foto Album';
+
+            card.addEventListener('click', function() {
+                openLightbox(src, alt);
+            });
+
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', alt);
+
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openLightbox(src, alt);
+                }
+            });
+        });
+
+        // =============================================================
+        // FUNGSI: Reveal Animation — Intersection Observer
+        // =============================================================
+        function initRevealAnimation() {
+            var revealElements = document.querySelectorAll('.reveal');
+            if (revealElements.length === 0) return;
+
+            var observer = new IntersectionObserver(
+                function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
+            );
+
+            revealElements.forEach(function(el) {
+                observer.observe(el);
+            });
+        }
+
+        // =============================================================
+        // FUNGSI: Smooth Scroll
+        // =============================================================
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    var targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    var target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        }
+
+        // =============================================================
+        // INISIALISASI
+        // =============================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            renderFotoSiswa();
+            initRevealAnimation();
+            initSmoothScroll();
+        });
+    </script>
+</body>
+</html>
